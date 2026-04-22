@@ -67,5 +67,14 @@ FIND candidates WITH skills CONTAINING 'JAVA', C# AND location = 'In-Office', 'R
 
 # Step 3: Generate SQL with bind variables (for security and reuse)
 ```
-S
+SELECT * FROM candidates WHERE skills LIKE '%' || ? || '%' AND location = ?;
 ```
+
+# Bind variables
+```
+["Java", "C#", "In-office", "Remote"]
+```
+
+# 3. Cost-Based Optimization Example
+# Scenario:
+• 
