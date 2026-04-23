@@ -42,7 +42,7 @@ SELECT * FROM candidates WHERE experience > 12;
 # 2. Intermediate Representation (IR) and SQL Generation
 # DSL input:
 ```
-FIND candidates WITH skills CONTAINING 'JAVA', C# AND location = 'In-Office', 'Remote'
+FIND candidates WITH skills CONTAINING 'Java', C# AND location = 'In-Office', 'Remote'
 ```
 
 # Step 1: Convert DSL to IR(abstract form)
@@ -77,4 +77,18 @@ SELECT * FROM candidates WHERE skills LIKE '%' || ? || '%' AND location = ?;
 
 # 3. Cost-Based Optimization Example
 # Scenario:
-• 
+
+• DSL query requires merging or attaching ```candidates``` and ```applications``` tables.
+• ```candidates``` has 5 million rows, ```applications``` has 15,000 rows.
+• Index on ```applications.candidate_id```.
+
+# Step 1: Generate two possible SQL queries
+# Option A: 
+```
+SELECT c
+```
+# Option B: 
+
+
+
+
