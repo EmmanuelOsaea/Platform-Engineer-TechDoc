@@ -102,7 +102,7 @@ So, based on the example provided from my research Option B is cheaper due to it
 # 4. SQL Template Caching
 # Common DSL pattern:
 ```
-SELECT candidates WHERE location IN ('In-office', 'Remote')
+FIND candidates WHERE skills CONTAINING 'Java', 'C#' AND location IN ('In-office', 'Remote')
 ```
 # Template:
 ```
