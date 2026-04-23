@@ -99,6 +99,17 @@ SELECT a.*, c.* FROM applications a JOIN candidates c ON a.candidate_id = c.id W
 So, based on the example provided from my research Option B is cheaper due to it begining from smaller ```applications``` table filtered by status then merges ```candidates```.
 
 # Step 3: Choose Option B for final SQL generation
+# 4. SQL Template Caching
+# Common DSL pattern:
+```
+SELECT candidates WHERE location IN ('In-office', 'Remote')
+```
+# Template:
+```
+SELECT * FROM candidates WHERE location = ?;
+```
+
+# Implementation:
 
 
 
