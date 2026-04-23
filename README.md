@@ -107,7 +107,9 @@ FIND candidates WHERE skills CONTAINING 'Java', 'C#' AND location IN ('In-office
 # Template:
 ```
 SELECT * FROM candidates
-
+WHERE skills LIKE '%' || ? || '%'
+  AND skills LIKE '%' || ? || '%'
+  AND location IN (?, ?);
 ```
 
 # Implementation:
