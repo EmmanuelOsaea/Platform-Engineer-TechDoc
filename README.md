@@ -79,16 +79,26 @@ SELECT * FROM candidates WHERE skills LIKE '%' || ? || '%' AND location = ?;
 # Scenario:
 
 • DSL query requires merging or attaching ```candidates``` and ```applications``` tables.
+
 • ```candidates``` has 5 million rows, ```applications``` has 15,000 rows.
+
 • Index on ```applications.candidate_id```.
 
 # Step 1: Generate two possible SQL queries
 # Option A: 
 ```
-SELECT c
+SELECT c.*, a.* FROM candidates c JOIN applications a ON c.id = a.candidate_id WHERE a.status = 'pending';
 ```
-# Option B: 
 
+# Option B: 
+```
+SELECT a.*, c.* FROM applications a JOIN candidates c ON a.candidate_id = c.id WHERE a.status = 'pending';
+```
+
+# Step 2: Cost estimation
+So, based on the example provided from my research Option B is cheaper due to it begining from smaller ```applications``` table filtered by status then merges ```candidates```.
+
+# Step 3: Choose Option B for final SQL generation
 
 
 
