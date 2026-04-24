@@ -117,6 +117,40 @@ WHERE skills LIKE '%' || ? || '%'
 
 • Also, multiple locations in an ```IN``` clause.
 
+# 5. Parallel Compilation
+# Scenario:
+
+• Multiple DSL queries arrive simultaneously.
+
+# Implementation(Java example):
+
+```
+
+```
+
+# Implementation(C# example):
+
+```
+
+```
+
+# 6. Dialect-Specific Adaptation
+
+# Example: PostgreSQL JSON query optimization
+# DSL:
+```
+
+```
+# PostgreSQl SQL:
+```
+
+```
+
+# MySQl SQL:
+
+```
+
+```
 
 
 
