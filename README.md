@@ -114,6 +114,7 @@ WHERE skills LIKE '%' || ? || '%'
 
 # Implementation:
 • It entails multiple ```skills LIKE``` condition.
+
 • Also, multiple locations in an ```IN``` clause.
 
 
